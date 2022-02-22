@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+declare var particlesJS:any;
 @Component({
   selector: 'abc-root',
   templateUrl: './app.component.html',
@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-cli-commands';
+
+  ngOnInit(): void{
+    particlesJS.load('particles','assets/particles.json', () => {
+      console.log('particles.js config loaded');
+    })
+  }
 }
+
